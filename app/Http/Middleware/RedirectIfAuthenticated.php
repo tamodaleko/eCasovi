@@ -17,6 +17,14 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        if ($guard === 'student' && Auth::guard($guard)->check()) {
+            return redirect()->route('student.dashboard');
+        }
+        
+        if ($guard === 'teacher' && Auth::guard($guard)->check()) {
+            return redirect()->route('teacher.dashboard');
+        }
+        
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
