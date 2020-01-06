@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'eCasovi') }}</title>
+        <title>{{ config('app.name', 'eCasovi') }} | {{ __('Teacher') }}</title>
 
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
@@ -35,7 +35,7 @@
         <!-- begin:: Header Mobile -->
         <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
             <div class="kt-header-mobile__logo">
-                <a href="{{ route('student.dashboard') }}">
+                <a href="{{ route('teacher.dashboard') }}">
                     <img alt="Logo" src="/media/logos/logo-light-mobile.png" />
                 </a>
             </div>
@@ -56,7 +56,7 @@
                     <!-- begin:: Aside -->
                     <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" style="height: 120px;">
                         <div class="kt-aside__brand-logo" style="margin: 0 auto;">
-                            <a href="{{ route('student.dashboard') }}">
+                            <a href="{{ route('teacher.dashboard') }}">
                                 <img alt="Logo" src="/media/logos/logo-light.png" />
                             </a>
                         </div>
@@ -69,7 +69,7 @@
                         <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
                             <ul class="kt-menu__nav">
                                 <li class="kt-menu__item kt-menu__item--here" aria-haspopup="true">
-                                    <a href="index.html" class="kt-menu__link ">
+                                    <a href="{{ route('teacher.dashboard') }}" class="kt-menu__link ">
                                         <i class="kt-menu__link-icon flaticon-squares-4"></i>
                                         <span class="kt-menu__link-text">{{ __('Dashboard') }}</span>
                                     </a>
