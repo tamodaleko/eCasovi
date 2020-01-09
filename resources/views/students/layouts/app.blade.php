@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'eCasovi') }}</title>
+        <title>{{ config('app.name', 'eCasovi') }} | {{ __('Student') }}</title>
 
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
@@ -69,7 +69,7 @@
                         <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
                             <ul class="kt-menu__nav">
                                 <li class="kt-menu__item kt-menu__item--here" aria-haspopup="true">
-                                    <a href="index.html" class="kt-menu__link ">
+                                    <a href="{{ route('student.dashboard') }}" class="kt-menu__link ">
                                         <i class="kt-menu__link-icon flaticon-squares-4"></i>
                                         <span class="kt-menu__link-text">{{ __('Dashboard') }}</span>
                                     </a>
@@ -698,15 +698,14 @@
                                     <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(/media/misc/bg-1.jpg)">
                                         <div class="kt-user-card__avatar">
                                             <img class="kt-hidden" alt="Pic" src="/media/users/300_25.jpg" />
-
-                                            <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                                            <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">{{ ucwords(Auth::user()->first_name[0]) }}</span>
+                                            <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">
+                                                {{ ucwords(Auth::user()->first_name[0]) }}
+                                            </span>
                                         </div>
                                         <div class="kt-user-card__name">
                                             {{ Auth::user()->first_name . ' ' . Auth::user()->last_name}}
                                         </div>
                                     </div>
-
                                     <!--end: Head -->
 
                                     <!--begin: Navigation -->

@@ -40,4 +40,12 @@ Route::prefix('teacher')->name('teacher.')->namespace('Teacher')->group(function
 
     // Dashboard
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    // Packages
+    Route::get('packages', 'PackageController@index')->name('packages.index');
+    Route::post('packages', 'PackageController@store')->name('packages.store');
+    Route::get('packages/create', 'PackageController@create')->name('packages.create');
+    Route::patch('packages/{package}', 'PackageController@update')->name('packages.update');
+    Route::delete('packages/{package}', 'PackageController@destroy')->name('packages.destroy');
+    Route::get('packages/{package}/edit', 'PackageController@edit')->name('packages.edit');
 });

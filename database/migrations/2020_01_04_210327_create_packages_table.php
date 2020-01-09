@@ -20,6 +20,7 @@ class CreatePackagesTable extends Migration
             $table->string('name');
             $table->integer('sessions');
             $table->integer('price');
+            $table->text('description');
             $table->timestamps();
 
             $table->foreign('teacher_id')
