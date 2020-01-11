@@ -1,4 +1,4 @@
-@extends('teachers.layouts.auth')
+@extends('teacher.layouts.auth')
 
 @section('content')
 <!--begin::Head-->

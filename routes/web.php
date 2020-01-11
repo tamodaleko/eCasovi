@@ -41,6 +41,12 @@ Route::prefix('teacher')->name('teacher.')->namespace('Teacher')->group(function
     // Dashboard
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+    // User
+    Route::get('account', 'UserController@editAccount')->name('user.account');
+    Route::patch('account', 'UserController@updateAccount')->name('user.account.update');
+    Route::get('password', 'UserController@editPassword')->name('user.password');
+    Route::patch('password', 'UserController@updatePassword')->name('user.password.update');
+
     // Packages
     Route::get('packages', 'PackageController@index')->name('packages.index');
     Route::post('packages', 'PackageController@store')->name('packages.store');

@@ -1,4 +1,4 @@
-@extends('teachers.layouts.app')
+@extends('teacher.layouts.app')
 
 @section('content')
 <!--Begin::Row-->

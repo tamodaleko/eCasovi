@@ -41,7 +41,6 @@
             </div>
             <div class="kt-header-mobile__toolbar">
                 <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
-                <button class="kt-header-mobile__toggler" id="kt_header_mobile_toggler"><span></span></button>
                 <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
             </div>
         </div>
@@ -130,32 +129,7 @@
                     <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
 
                         <!-- begin:: Header Menu -->
-                        <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-                            <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
-                                <ul class="kt-menu__nav ">
-                                    <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel kt-menu__item--active" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text">Pages</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
-                                        <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--left">
-                                            <ul class="kt-menu__subnav">
-                                                <li class="kt-menu__item " aria-haspopup="true">
-                                                    <a href="index.html" class="kt-menu__link ">
-                                                        <span class="kt-menu__link-icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                    <rect x="0" y="0" width="24" height="24" />
-                                                                    <path d="M5.84026576,8 L18.1597342,8 C19.1999115,8 20.0664437,8.79732479 20.1528258,9.83390904 L20.8194924,17.833909 C20.9112219,18.9346631 20.0932459,19.901362 18.9924919,19.9930915 C18.9372479,19.9976952 18.8818364,20 18.8264009,20 L5.1735991,20 C4.0690296,20 3.1735991,19.1045695 3.1735991,18 C3.1735991,17.9445645 3.17590391,17.889153 3.18050758,17.833909 L3.84717425,9.83390904 C3.93355627,8.79732479 4.80008849,8 5.84026576,8 Z M10.5,10 C10.2238576,10 10,10.2238576 10,10.5 L10,11.5 C10,11.7761424 10.2238576,12 10.5,12 L13.5,12 C13.7761424,12 14,11.7761424 14,11.5 L14,10.5 C14,10.2238576 13.7761424,10 13.5,10 L10.5,10 Z" fill="#000000" />
-                                                                    <path d="M10,8 L8,8 L8,7 C8,5.34314575 9.34314575,4 11,4 L13,4 C14.6568542,4 16,5.34314575 16,7 L16,8 L14,8 L14,7 C14,6.44771525 13.5522847,6 13,6 L11,6 C10.4477153,6 10,6.44771525 10,7 L10,8 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                                </g>
-                                                            </svg>
-                                                        </span>
-                                                        <span class="kt-menu__link-text">My Account</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper"></div>
                         <!-- end:: Header Menu -->
 
                         <!-- begin:: Header Topbar -->
@@ -710,7 +684,7 @@
 
                                     <!--begin: Navigation -->
                                     <div class="kt-notification">
-                                        <a href="custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
+                                        <a href="{{ route('teacher.user.account') }}" class="kt-notification__item">
                                             <div class="kt-notification__item-icon">
                                                 <i class="flaticon2-calendar-3 kt-font-success"></i>
                                             </div>
@@ -723,7 +697,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="custom/apps/user/profile-3.html" class="kt-notification__item">
+                                        <!-- <a href="custom/apps/user/profile-3.html" class="kt-notification__item">
                                             <div class="kt-notification__item-icon">
                                                 <i class="flaticon2-mail kt-font-warning"></i>
                                             </div>
@@ -735,7 +709,7 @@
                                                     Inbox and tasks
                                                 </div>
                                             </div>
-                                        </a>
+                                        </a> -->
                                         <div class="kt-notification__custom kt-space-between">
                                             <form id="form-logout" action="{{ route('student.logout') }}" method="POST" style="display: none;">
                                                 {{ csrf_field() }}
@@ -755,16 +729,6 @@
 
                     <!-- end:: Header -->
                     <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
-                        <!-- begin:: Subheader -->
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-container  kt-container--fluid ">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">{{ __('Dashboard') }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end:: Subheader -->
 
                         <!-- begin:: Content -->
                         <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">

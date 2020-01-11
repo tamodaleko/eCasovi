@@ -40,4 +40,24 @@ class Teacher extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the user's name.
+     *
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    /**
+     * Get the user's intials.
+     *
+     * @return string
+     */
+    public function getNameInitialsAttribute()
+    {
+        return $this->first_name[0] . $this->last_name[0];
+    }
 }

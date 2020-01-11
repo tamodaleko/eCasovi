@@ -13,6 +13,6 @@ class DashboardController extends TeacherController
      */
     public function index()
     {
-        return view('teachers.dashboard');
+        return view('teacher.dashboard');
     }
 }
